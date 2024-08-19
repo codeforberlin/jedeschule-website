@@ -1,0 +1,56 @@
+body {
+    padding: 0;
+    margin: 0;
+    line-height: 1.4em;
+}
+
+header {
+    border-bottom: 1px solid lightgray;
+    & a {
+        text-decoration: none;
+        color: green;
+    }
+    & h1 {
+        margin-left: 40px;
+        font-size: min(7vw, 2.5em);
+    }
+}
+
+footer {
+    border-top: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    padding-block: 20px;
+
+    & ul {
+        display: flex;
+        gap: 20px;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.claim {
+    font-size: 1.5em;
+    font-weight: normal;
+    line-height: 1.4em;
+    border-left: 4px solid green;
+    padding-left: 20px;
+}
+
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+header, footer {
+    width: 100%;
+}
+
+section {
+    width: min(80ch, 95%);
+}

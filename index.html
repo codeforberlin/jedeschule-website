@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>jedeschule.codefor.de</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <script type="module" src="webcomponents/school-stats.mjs"></script>
+    <script type="module" src="webcomponents/search-form.mjs"></script>
+</head>
+<body>
+<header class="navigation" role="banner">
+    <a href="/" class="logo">
+        <h1>jedeschule.codefor.de</h1>
+    </a>
+</header>
+<section>
+    <h2 class="claim">jedeschule.codefor.de bringt Stammdaten aller Schulen Deutschlands an einem Ort zusammen</h2>
+    <ul>
+        <li>per <a href="https://jedeschule.codfor.de/docs">API</a></li>
+        <li>als <a href="https://jedeschule.codefor.de/csv-data/">CSV-Datei zum Download</a></li>
+        <li>zum <a href="#erkunden">interaktiven Erkunden</a></li>
+    </ul>
+
+</section>
+<section>
+    <h2>Geschichte</h2>
+    <p>
+        Ursprünglich als <a href="https://jedeschule.de">jedeschule.de</a> gestartet, brachte die Open Knowledge
+        Foundation
+        2017 in Zusammenarbeit mit BildungsCent erstmals eine Rechercheplatform ans Licht der Welt, auf der Stammdaten
+        von Schulen (Name, Standort, Schulform, Träger) erstmals für ganz Deutschland verfügbar waren. <br/>
+        Für einige Bundesländer wurden außerdem Informationen zu Partnerschaften und Aktivitäten außerhalb des
+        Unterrichts bereitgestellt.
+    </p>
+    <p>
+        Gesammelt wurden die Daten per Webscraping. Im Laufe der Zeit änderten die Bundesländer die Struktur ihrer
+        Webseiten und die Scraper konnten zunehmend keine neuen Daten mehr abrufen.
+    </p>
+    <p>
+        Set 2019 kümmern sich Freiwillige von <a href="https://codefor.de">codefor.de</a> um die Aktualisierung der
+        Scraper und Daten. Seitdem werden einmal pro Woche die neusten Daten abgerufen und kontinuierlich
+        bereitgestellt.
+    </p>
+</section>
+
+<section>
+    <h2>Daten</h2>
+    <p>
+        Alle Daten zum Projekt sind unter <a href="/csv-data">Daten</a> frei zugänglich und können
+        heruntergeladen werden.
+        Haben Sie Anmerkungen oder einen Fehler entdeckt, dann melden Sie sich gerne bei uns per
+        <a href="mailto:info@datenschule.de">Mail</a>.
+    </p>
+    <p>
+        Die aktuellen Daten werden von folgenden Quellen bezogen:
+    <ul>
+        <li>Baden-Württemberg: <a href="https://lobw.kultus-bw.de/didsuche/">Schul- und Dienststellensuche</a></li>
+        <li>Berlin: <a href="https://daten.berlin.de/datensaetze/schulen-wfs-ebc64e18">Geodatenportal (FISBroker)</a>
+        </li>
+        <li>Brandenburg: <a
+                href="https://geoportal.brandenburg.de/detailansichtdienst/render?view=gdibb&url=https://geoportal.brandenburg.de/gs-json/xml?fileid=d040077b-fcd1-4ab0-bc7f-a818fc6fa244">Geodatenportal</a>
+        </li>
+        <li>Bremen: <a
+                href="https://www.bildung.bremen.de/detail.php?template=35_schulsuche_stufe2_d">Schulwegweiser</a></li>
+        <li>Hamburg: <a href="https://metaver.de/trefferanzeige?docuuid=BDEB9B13-0C2B-42A3-B248-A31B01B454BA">Geodatenportal</a>
+        </li>
+        <li>Hessen: <a href="https://schul-db.bildung.hessen.de/schul_db.html">Schuldatenbank</a></li>
+        <li>Mecklenburg-Vorpommern: <a href="https://www.laiv-mv.de/Statistik/Veröffentlichungen/Verzeichnisse/">Verzeichnisse
+            zum Download </a> (Datenstand Vorjahr, weil aktuelle Daten nur zum Kauf angeboten werden)
+        </li>
+        <li>Niedersachsen: <a href="https://schulen.nibis.de/search/advanced">Bildungsportal - Schulsuche</a></li>
+        <li>Nordrhein-Westfalen: <a href="https://www.schulministerium.nrw/open-data">Open Data Portal des
+            Schulministeriums</a></li>
+        <li>Rheinland-Pfalz: <a href="https://bildung.rlp.de/schulen">Bildungsserver - Schulsuche</a></li>
+        <li>Saarland: <a
+                href="https://www.saarland.de/mbk/DE/portale/bildungsserver/schulen-und-bildungswege/schuldatenbank">Bildungsserver
+            - Schulsuche</a></li>
+        <li>Sachsen: <a href="https://schuldatenbank.sachsen.de/index.php?id=30">Schuldatenbank</a></li>
+        <li>Sachsen-Anhalt: <a
+                href="https://www.bildung-lsa.de/ajax.php?m=getSSResult&q=&lk=-1&sf=-1&so=-1&timestamp=1480082277128/">Schulsuche</a>
+        </li>
+        <li>Schleswig-Holstein: <a href="https://opendata.schleswig-holstein.de/dataset/schulen-2024-01-31">Open Data
+            Portal</a></li>
+        <li>Thüringen: <a href="https://www.schulportal-thueringen.de/start">Schulportal</a></li>
+    </ul>
+    </p>
+</section>
+
+<section>
+    <h2 id="erkunden">Erkunden</h2>
+    <h3>Übersicht über die Anzahl der bekannten Schulen</h3>
+    <school-stats></school-stats>
+    <br/>
+
+    <h3>Nach Schulen suchen</h3>
+    <p>Diese Suche soll nur ein schnelles Erkunden der Daten ermöglichen. Für detailliertere
+        Analysen bietet sich die <a href="https://jedeschule.codefor.de/docs">API</a> an.</p>
+    <search-form></search-form>
+
+    <p>
+        Alternativ können Sie die Daten auch <a href="https://knutator2.github.io/jedeschule-explore/#/dashboard">
+        in einem interaktiven Dashboard erkunden</a>.
+    </p>
+</section>
+<footer>
+    <section>
+        <ul>
+            <li><a href="https://github.com/datenschule/jedeschule-scraper">Scraper auf Github </a></li>
+            <li><a href="https://github.com/codeforberlin/jedeschule-api">API auf Github </a></li>
+            <li> <a href="https://okfn.de/impressum/">Impressum & Datenschutzerklärung</a> </li>
+        </ul>
+    </section>
+</footer>
+</body>
+</html>
