@@ -1,4 +1,4 @@
-import {LitElement, html} from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import {LitElement, html, css} from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import {Task, initialState} from 'https://cdn.jsdelivr.net/npm/@lit/task@1.0.1/+esm'
 import {bundeslandNames} from "./bundesland-names.mjs";
 
@@ -7,6 +7,14 @@ class SearchForm extends LitElement {
     static properties = {
         query: {},
     };
+
+    static styles = css`
+        table {
+            display: block;
+            max-width: 100%;
+            overflow-y: auto;
+        }
+    `;
 
     renderSchoolRow(school) {
         return html`
