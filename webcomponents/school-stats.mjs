@@ -25,6 +25,7 @@ export class SchoolStats extends LitElement {
                     <tr>
                         <th>Bundesland</th>
                         <th>Schulanzahl</th>
+                        <th>Letzte Aktualisierung</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -32,6 +33,7 @@ export class SchoolStats extends LitElement {
                         <tr>
                             <td>${bundeslandNames[entry.state]}</td>
                             <td>${entry.count}</td>
+                            <td>${entry.last_updated}</td>
                         </tr>`)}
                     </tbody>
                 </table>
